@@ -1,8 +1,9 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import { Covid } from "./component/covid";
-import DenseAppBar from "./component/appBar";
-import Main from "./component/todoList";
+import { Tempapp } from "../src/component/Tempapp";
+// import DenseAppBar from "./component/appBar";
+// import Main from "./component/todoList";
 // import Form from "./component/Form";
 
 export default function App() {
@@ -10,9 +11,10 @@ export default function App() {
     <>
       {/* <Form /> */}
       <div>
-        <DenseAppBar />
+        {/* <DenseAppBar />
         <br />
-        <Main />
+        <Main /> */}
+        <Tempapp />
         {/* <Covid /> */}
       </div>
     </>
