@@ -2,6 +2,9 @@ import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import { FaBluetooth } from "react-icons/fa";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ListCom from "./ListCom";
 import "./todoList.css";
@@ -48,7 +51,7 @@ const Main = () => {
 
   const firstEvent = () => {
     if (!item) {
-      alert("plz fill the data");
+      toast.warn("plz fill the data");
     } else if (item && !toggle) {
       setNewItem(
         newItem.map((elem) => {
@@ -68,10 +71,10 @@ const Main = () => {
     }
   };
 
-  const thirdEventS = () => {
+  const removeAllItems = () => {
     setNewItem([]);
   };
-  const thirdEvent = (id) => {
+  const secondEvent = (id) => {
     setNewItem((oldItems) => {
       return oldItems.filter((arrEle) => {
         return id !== arrEle.id;
@@ -111,7 +114,7 @@ const Main = () => {
                 id={val.id}
                 text={val.name}
                 onSelect={() => {
-                  thirdEvent(val.id);
+                  secondEvent(val.id);
                 }}
                 onEditSelect={() => {
                   edit(val.id);
@@ -124,11 +127,13 @@ const Main = () => {
       <br />
       <br />
       <div className="childTwo">
-        <Button className="delBtn" onClick={thirdEventS}>
+        <Button className="delBtn" onClick={removeAllItems}>
           <DeleteIcon />
+          {/* <FaBluetooth /> */}
           Delete All
         </Button>
       </div>
+      <ToastContainer position="top-center" />
     </div>
   );
 };

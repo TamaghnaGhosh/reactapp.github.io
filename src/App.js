@@ -4,6 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import { Tempapp } from "../src/component/Tempapp";
 import DenseAppBar from "./component/appBar";
 import Main from "./component/todoList";
+// import App1 from "./component/useReducer";
 // import Form from "./component/Form";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <DenseAppBar />
         <br />
         <Main />
+        {/* <App1 /> */}
         {/* <Tempapp /> */}
         {/* <Covid /> */}
       </div>
